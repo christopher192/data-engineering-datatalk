@@ -1,4 +1,29 @@
-## Data Engineering
+## Data Engineering Zoomcamp
+### Introduction
+While working in a manufacturing environment, realizing that data engineering play a critical role in both manufacturing operation. When data become large and complex, it is  data engineering take part in organizing, processing, and making it usable. This course will give solid foundation to fully understand these techniques, so can apply them effectively in real-world scenarios when needed. Additionally, data engineering is vital in machine learning applications, where clean, structured, up-to-date, and scalable data pipelines are key to successful model deployment.
+
+### How Data Engineering Supporting Manufacturing Application
+1. Data Source
+    - Data come from multiple systems, such as MES (Manufacturing Execution System), PLC/ SCADA, ERP, and IoT sensor on machine.
+    - Each system store data in different format and update at different interval.
+2. Data Pipeline Setup
+    - build ETL/ ELT pipeline to
+        - `Extract` data from machine and system (via API, log files, other channel)
+        - `Transform` it (cleaning, aggregating, calculating, etc)
+        - `Load` it into a central warehouse or real-time database (TimescaleDB, InfluxDB)
+3. Real-Time Data Streaming
+    -  Tools like Apache Kafka or AWS Kinesis are used to stream data in real time for time-sensitive project/ app
+4. Backend in Production Application
+    - The backend will query the clean, ready-to-use data store and serves data via API.
+    - Frontend dashboards built with React, Angular, or Power BI pull this data live.
+5. Monitoring & Reliability
+    - Setup monitoring to detect pipeline failure or data delay, ensuring production application reliability.
+6. Outcome
+    - Plant supervisor monitor production data in real time.
+    - Alert will be triggered automatically if defect rate spike or machine efficiency drop.
+    - Decision is made quickly, reducing waste and improving efficiency.
+
+### ETL/ ELT Technique
 ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform) are two key approaches in data engineering for processing and preparing data for analytics.
 
 ### 1. ETL (Extract, Transform, Load) vs ELT (Extract, Load, Transform)
