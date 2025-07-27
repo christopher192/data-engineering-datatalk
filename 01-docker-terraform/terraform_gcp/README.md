@@ -1,11 +1,11 @@
 ## Terraform
-Infrastructure as Code (IaC) tool that lets user define, create, and manage cloud infrastructure using code. Instead of clicking through cloud dashboards, write  the configuration files in .tf format to automate thing such as
+Infrastructure as Code (IaC) tool that lets user define, create, and manage cloud infrastructure using code. Instead of clicking through cloud dashboards, write the configuration files in `.tf` format to automate thing such as
 - Creating virtual machine
 - Setting up storage bucket
 - Launching database
 - Manage network
 
-In conclusion, the cloud infrastructure become manageable, version-controlled (like source code), reusable and shareable, easier to automate and replicate
+In conclusion, the cloud infrastructure become manageable, version-controlled (like source code), reusable and shareable, easier to automate and replicate.
 
 ### Step-by-Step
 1. Allow Terraform to create and manage resources in GCP
@@ -16,9 +16,9 @@ In conclusion, the cloud infrastructure become manageable, version-controlled (l
         - Compute Admin
         - Storage Admin
     - Create a private key
-        - Format: JSON.
+        - Format: `JSON`.
         - Allow Terraform to act on behalf of service account.
-    - Download and securely store the JSON key.
+    - Download and securely store the `JSON` key.
 
 This will allow the service account to manage BigQuery, Compute Engine, and Cloud Storage resources as required by Terraform.
 
@@ -58,5 +58,3 @@ terraform destroy
 ![alt text](images/image-2.png)
 
 7. After trigger `terraform destroy`, resources will be deleted.
-
-### 
