@@ -52,3 +52,11 @@ terraform apply -var="project=<your-gcp-project-id>"
 # delete infra after work, to avoid cost on any running services
 terraform destroy
 ```
+
+6. After running `terraform apply`, resources will be created. 
+![alt text](images/image-1.png)
+![alt text](images/image-2.png)
+
+7. After trigger `terraform destroy`, resources will be deleted.
+
+### 
