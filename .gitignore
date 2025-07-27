@@ -1,3 +1,6 @@
 data/
 data_pgadmin/
 postgresql_data/
+private_key/
+.terraform/
+.terraform.lock.hcl
