@@ -1,6 +1,6 @@
 ## Data Engineering Zoomcamp
 ### Introduction
-While working in a manufacturing environment, realizing that data engineering play a critical role in both manufacturing operation. When data become large and complex, it is  data engineering take part in organizing, processing, and making it usable. This course will give solid foundation to fully understand these techniques, so can apply them effectively in real-world scenarios when needed. Additionally, data engineering is vital in machine learning applications, where clean, structured, up-to-date, and scalable data pipelines are key to successful model deployment.
+While working in a manufacturing environment, realizing that data engineering play a critical role in manufacturing operation. When data become large and complex, it is data engineering take part in organizing, processing, and making it usable. This course will give solid foundation to fully understand these techniques, so can apply them effectively in real-world scenarios when needed. Additionally, data engineering is vital in machine learning application, where clean, structured, up-to-date, and scalable data pipeline is key to successful model deployment.
 
 ### How Data Engineering Supporting Manufacturing Application
 1. Data Source
@@ -26,7 +26,7 @@ While working in a manufacturing environment, realizing that data engineering pl
 ### ETL/ ELT Technique
 ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform) are two key approaches in data engineering for processing and preparing data for analytics.
 
-### 1. ETL (Extract, Transform, Load) vs ELT (Extract, Load, Transform)
+### ETL (Extract, Transform, Load) vs ELT (Extract, Load, Transform)
 
 | Feature               | **ETL** | **ELT** |
 |----------------------|-----------------------------------|-----------------------------------|
@@ -48,18 +48,18 @@ ETL (Extract, Transform, Load) and ELT (Extract, Load, Transform) are two key ap
 - If transformation needs to be **on-demand** and flexible.
 - For **scalability and cost efficiency** in modern data pipelines.
 
-### 2. Real-World Use Cases of ETL vs ELT
-ETL Use Cases (Extract → Transform → Load)
+### Real-World Use Case of ETL vs ELT
+ETL Use Case (Extract → Transform → Load)
 - Healthcare & Insurance
     - Use Case: Hospitals extract patient records from multiple systems, clean and standardize formats (transformation), and then store/ load them into data warehouse.
     - Why ETL? Ensures data privacy, accuracy, and compliance before storing in a structured format for reporting and analysis.
 
-ELT Use Cases (Extract → Load → Transform)
-- IoT & Sensor Data (Smart Devices, Factories)
-    - Use Case: Tesla processes live vehicle sensor data to monitor battery performance and predict failures.
-    - Why ELT? Raw IoT data is stored in a cloud warehouse, and transformations are done dynamically for real-time insights.
+ELT Use Case (Extract → Load → Transform)
+- IoT & Sensor Data (Smart Device, Factory)
+    - Use Case: Tesla processes live vehicle sensor data to monitor battery performance and predict failure.
+    - Why ELT? Raw IoT data is stored in a cloud warehouse, and transformation is done dynamically for real-time insight.
 
-### 3. Data Warehouse vs Data Lake
+### Data Warehouse vs Data Lake
 | **Feature** | **Data Warehouse** | **Data Lake** |
 |----------------------|----------------------|----------------------|
 | **Data Type** | Structured (SQL tables, relational) | Raw, unstructured & structured (JSON, logs, images, videos) |
