@@ -1,6 +1,6 @@
 ### GCP VM Setting
 - Region/ Zone: Iowa (us-central1), any zone
-- Machine Type: e2-standard-4 → 4 vCPUs, 16 GB RAM (general-purpose)
+- Machine Type: e2-standard-4 (4 vCPUs, 16 GB RAM)
 - Operating System: Ubuntu 22.04 (64-bit)
 - Boot Disk: 30 GB Balanced Persistent Disk (SSD, good balance of performance and cost)
 
@@ -19,7 +19,7 @@ Follow the guide here: https://cloud.google.com/compute/docs/connect/create-ssh-
     - For the Host, enter the external IP address of your GCP VM
     - Use your Google username (e.g., yourname@gmail.com) as the SSH user
 
-### Tip to save cost
+### Tip to Save Cost
 To reduce cost, remember to `stop` or `suspend` the VM when not in use, will be charged for the disk, but CPU and RAM usage will not be billed while the VM is stopped. 
 
 `Stop`: Resets the VM – better for cost saving over long idle period.<br>
