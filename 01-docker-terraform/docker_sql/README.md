@@ -161,12 +161,13 @@ python ingest_data.py \
   --url=${URL}
 ```
 
-Build the Docker image for the ingestion script
+Build The Docker Image for The Ingestion Script<br>
+Refer `Dockerfile`
 ```
 docker build -t taxi_ingest:v001 .
 ```
 
-Run the script with Docker
+Run The Script with Docker<br>
 ```
 URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
 
@@ -182,4 +183,46 @@ docker run -it \
     --url=${URL}
 ```
 
-5. Docker Compose
+### Step-by-Step to Run Data Ingestion (Docker Compose)<br>
+Build Docker Compose
+```
+# create so all pgAdmin server connections, history, and settings are stored in ./data_pgadmin
+# survive container shutdown, restart, or rebuild
+mkdir data_pgadmin
+
+# ensure pgAdmin has permission to read/ write to this folder
+sudo chown 5050:5050 data_pgadmin
+
+# up container
+docker-compose up
+
+# detached mode
+docker compose up -d
+
+# shutting down
+docker compose down
+```
+
+Build the Docker image for the ingestion script
+```
+docker build -t taxi_ingest:v001 .
+```
+
+Run the script with Docker
+```
+# check network
+docker network ls
+
+docker run -it \
+  --network=docker_sql_default \
+  taxi_ingest:v001 \
+  --user=root \
+  --password=root \
+  --host=pgdatabase \
+  --port=5432 \
+  --db=ny_taxi \
+  --table_name=yellow_taxi_trips \
+  --url=https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
+```
+
+### SQL

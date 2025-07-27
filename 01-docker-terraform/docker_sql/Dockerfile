@@ -1,9 +1,15 @@
-FROM python:3.9.1
-
-RUN apt-get install wget
-RUN pip install pandas sqlalchemy psycopg2
+FROM python:3.9-slim
 
 WORKDIR /app
-COPY ingest_data.py ingest_data.py 
 
-ENTRYPOINT [ "python", "ingest_data.py" ]
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    gcc \
+    libpq-dev \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir pandas sqlalchemy psycopg2-binary
+
+COPY ingest_data.py .
+
+ENTRYPOINT ["python", "ingest_data.py"]
