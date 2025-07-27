@@ -3,9 +3,12 @@
 
 import os
 import argparse
-import pandas as pd
+
 from time import time
+
+import pandas as pd
 from sqlalchemy import create_engine
+
 
 def main(params):
     user = params.user
@@ -16,6 +19,9 @@ def main(params):
     table_name = params.table_name
     url = params.url
     
+    # Ensure directory exists
+    os.makedirs('data', exist_ok=True)
+
     # the backup files are gzipped, and it's important to keep the correct extension
     # for pandas to be able to open the file
     if url.endswith('.csv.gz'):
@@ -23,11 +29,12 @@ def main(params):
     else:
         csv_name = 'output.csv'
 
-    os.system(f"wget {url} -O {csv_name}")
+    file_path = os.path.join('data', csv_name)
+    os.system(f"wget {url} -O {file_path}")
 
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
-    df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
+    df_iter = pd.read_csv(file_path, iterator=True, chunksize=100000)
 
     df = next(df_iter)
 
@@ -38,7 +45,9 @@ def main(params):
 
     df.to_sql(name=table_name, con=engine, if_exists='append')
 
+
     while True: 
+
         try:
             t_start = time()
             
@@ -52,6 +61,7 @@ def main(params):
             t_end = time()
 
             print('inserted another chunk, took %.3f second' % (t_end - t_start))
+
         except StopIteration:
             print("Finished ingesting data into the postgres database")
             break
