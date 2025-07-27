@@ -225,4 +225,8 @@ docker run -it \
   --url=https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
 ```
 
-### SQL
+### SQL Query<br>
+1. Test PostgreSQL Connection<br>
+Refer `pg-test-connection.ipynb` verify that your database connection is working properly.
+2. Upload Merged Data<br>
+Use `upload-data.ipynb` to load the main dataset into PostgreSQL, merged with the taxi zone lookup.
